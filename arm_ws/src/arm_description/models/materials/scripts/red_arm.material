@@ -1,0 +1,22 @@
+material RedArmMaterial/Diffuse
+{
+    receive_shadows off
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture painted_red.jpg
+            }
+            texture_unit
+            {
+                texture painted_red_ambient.jpg
+            }
+            texture_unit
+            {
+                texture painted_red_roughness.jpg
+            }
+        }
+    }
+}

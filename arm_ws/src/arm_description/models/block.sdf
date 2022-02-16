@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+    <model name='block'>
+        <link name='base'>
+            <inertial>
+                <mass>0.3</mass>
+            </inertial>
+            <pose>2 2 0.03 0 0 .785</pose>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.2 0.4 0.06</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>500</mu>
+                            <mu2>500</mu2>
+                            <slip1>0.0</slip1>
+                            <slip2>0.0</slip2>
+                        </ode>
+                    </friction>
+                    <contact>
+                        <ode>
+                            <kp>1e8</kp>
+                            <kd>1e7</kd>
+                            <min_depth>3</min_depth>
+                        </ode>
+                    </contact>
+                </surface>
+            </collision>
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>0.2 0.2 0.06</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>model://materials/scripts</uri>
+                        <uri>model://materials/textures</uri>
+                        <name>RedArmMaterial/Diffuse</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

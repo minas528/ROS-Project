@@ -1,0 +1,38 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Node template
+# Logs
+/logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+
+
+# dotenv environment variables file
+.env
+
+# IDE / Editor
+.idea
+
+
+# IDE / Editor
+.vscode
+
+# Service worker
+sw.*
+
+# macOS
+.DS_Store
+
+# Vim swap files
+*.swp
+
+# Build Directory
+build
+devel

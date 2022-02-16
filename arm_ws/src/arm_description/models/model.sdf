@@ -1,0 +1,396 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+    <model name='arm'>
+        <link name='base'>
+            <pose>0 0 0.05 0 0 0</pose>
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>.5</radius>
+                        <length>.1</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass>200</mass>
+            </inertial>
+            <visual name='visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>.5</radius>
+                        <length>.1</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>model://materials/scripts</uri>
+                        <uri>model://materials/textures</uri>
+                        <name>RedArmMaterial/Diffuse</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+        <joint name="base_arm1" type="revolute">
+            <parent>base</parent>
+            <child>arm1</child>
+            <pose>0 0 -0.025 0 0</pose>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <damping>1.0</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+                <limit>
+                    <effort>100</effort>
+                    <velocity>1.0</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name='arm1'>
+            <pose>0 0 0.125 0 0 0</pose>
+            <inertial>
+                <mass>.01</mass>
+            </inertial>
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>.1</radius>
+                        <length>.05</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>.1</radius>
+                        <length>.05</length>
+                    </cylinder>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="arm1_arm2" type="revolute">
+            <parent>arm1</parent>
+            <child>arm2</child>
+            <pose>0 0 -1 0 0 0</pose>
+            <axis>
+                <xyz>1 0 0</xyz>
+                <limit>
+                    <effort>100</effort>
+                    <velocity>1.0</velocity>
+                </limit>
+                <dynamics>
+                    <damping>1.0</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+            </axis>
+        </joint>
+        <link name='arm2'>
+            <pose>0 0 1.15 0 0 0</pose>
+            <inertial>
+                <mass>.5</mass>
+            </inertial>
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>.05</radius>
+                        <length>2</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>.05</radius>
+                        <length>2</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <script>
+                        <uri>model://materials/scripts</uri>
+                        <uri>model://materials/textures</uri>
+                        <name>ArmMaterial/Diffuse</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+        <joint name="arm2_arm3" type="revolute">
+            <parent>arm2</parent>
+            <child>arm3</child>
+            <pose>0 0 -0.5 0 0 0</pose>
+            <axis>
+                <xyz>1 0 0</xyz>
+                <dynamics>
+                    <damping>1.0</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+                <limit>
+                    <effort>100</effort>
+                    <velocity>1.0</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name='arm3'>
+            <pose>0 0 2.65 0 0 0</pose>
+            <inertial>
+                <mass>.25</mass>
+            </inertial>
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>.05</radius>
+                        <length>1</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>.05</radius>
+                        <length>1</length>
+                    </cylinder>
+                </geometry>
+
+                <material>
+                    <script>
+                        <uri>model://materials/scripts</uri>
+                        <uri>model://materials/textures</uri>
+                        <name>RedArmMaterial/Diffuse</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+        <joint name="arm3_arm4" type="revolute">
+            <parent>arm3</parent>
+            <child>arm4</child>
+            <pose>0 0 -0.25 0 0 0</pose>
+            <axis>
+                <xyz>1 0 0</xyz>
+                <dynamics>
+                    <damping>1.0</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+                <limit>
+                    <effort>100</effort>
+                    <velocity>1.0</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name='arm4'>
+            <pose>0 0 3.4 0 0 0</pose>
+            <inertial>
+                <mass>.125</mass>
+            </inertial>
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>.05</radius>
+                        <length>.5</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>.05</radius>
+                        <length>.5</length>
+                    </cylinder>
+                </geometry>
+                <material>
+                    <ambient>0.5 0.75 0 1</ambient>
+                    <diffuse>0.7 0.9 0 1</diffuse>
+                    <specular>0.2 0.2 0.2 64</specular>
+                    <emissive>0.1 0 0.1 1</emissive>
+                    <script>
+                        <uri>model://materials/scripts</uri>
+                        <uri>model://materials/textures</uri>
+                        <name>ArmMaterial/Diffuse</name>
+                    </script>
+                </material>
+            </visual>
+        </link>
+
+        <joint name="arm4_arm5" type="revolute">
+            <parent>arm4</parent>
+            <child>arm5</child>
+            <pose>0 0 -0.02 0 0 0</pose>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <dynamics>
+                    <damping>1.0</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+                <limit>
+                    <effort>100</effort>
+                    <velocity>1.0</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name='arm5'>
+            <pose>0 0 3.67 0 0 0</pose>
+            <inertial>
+                <mass>.01</mass>
+            </inertial>
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>.1</radius>
+                        <length>.04</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <cylinder>
+                        <radius>.1</radius>
+                        <length>.04</length>
+                    </cylinder>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="arm5_palm" type="revolute">
+            <parent>arm5</parent>
+            <child>palm</child>
+            <pose>0 0 -0.02 0 0 0</pose>
+            <axis>
+                <dynamics>
+                    <damping>1.0</damping>
+                    <friction>0.5</friction>
+                </dynamics>
+                <limit>
+                    <effort>100</effort>
+                    <velocity>1.0</velocity>
+                    <lower>-0.4</lower>
+                    <upper>0.4</upper>
+                </limit>
+                <xyz>1 0 0</xyz>
+            </axis>
+        </joint>
+        <link name="palm">
+            <inertial>
+                <mass>.01</mass>
+            </inertial>
+            <pose>0.0 0.0 3.71 0 0 0</pose>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.1 0.4 0.04</size>
+                    </box>
+                </geometry>sudo apt install obs-studio
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.1 0.4 0.04</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>Gazebo/Red</script>
+                </material>
+            </visual>
+        </link>
+        <joint name="palm_left_finger" type="revolute">
+            <pose>0 0 -0.10 0 0 0</pose>
+            <parent>palm</parent>
+            <child>left_finger</child>
+            <axis>
+                <xyz>1 0 0</xyz>
+                <limit>
+                    <effort>200</effort>
+                    <velocity>2</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name="left_finger">
+            <pose>0 0.18 3.83 0 0 0</pose>
+            <inertial>
+                <mass>.01</mass>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.1 0.04 0.2</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>700</mu>
+                            <mu2>700</mu2>
+                        </ode>
+                    </friction>
+                    <contact>
+                        <ode>
+                            <kp>1e10</kp>
+                            <kd>1e8</kd>
+                            <min_depth>1</min_depth>
+                        </ode>
+                    </contact>
+                </surface>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.1 0.04 0.2</size>
+                    </box>
+                </geometry>
+            </visual>
+        </link>
+        <joint name="palm_right_finger" type="revolute">
+            <pose>0 0 -0.1 0 0 0</pose>
+            <child>right_finger</child>
+            <parent>palm</parent>
+            <axis>
+                <xyz>1 0 0</xyz>
+                <limit>
+                    <effort>200</effort>
+                    <velocity>2</velocity>
+                </limit>
+            </axis>
+        </joint>
+        <link name="right_finger">
+            <pose>0 -0.18 3.83 0 0 0</pose>
+            <inertial>
+                <mass>.01</mass>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.1 0.04 0.2</size>
+                    </box>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>700</mu>
+                            <mu2>700</mu2>
+                        </ode>
+                    </friction>
+                    <contact>
+                        <ode>
+                            <kp>1e10</kp>
+                            <kd>1e8</kd>
+                            <min_depth>1</min_depth>
+                        </ode>
+                    </contact>
+                </surface>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.1 0.04 0.2</size>
+                    </box>
+                </geometry>
+                <material>
+                    <script>Gazebo/Green</script>
+                </material>
+            </visual>
+        </link>
+        <plugin name="publisher" filename="libPublisher.so"/>
+        <plugin name="subscriber" filename="libRosSubscriber.so"/>
+    </model>
+</sdf>
